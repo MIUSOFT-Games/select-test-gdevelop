@@ -175,7 +175,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.5468750000000012,
+        "zoomFactor": 0.43357743047023817,
         "windowMask": false
       },
       "objectsGroups": [
@@ -203,7 +203,14 @@
           ]
         }
       ],
-      "variables": [],
+      "variables": [
+        {
+          "folded": true,
+          "name": "is_modal_open",
+          "type": "boolean",
+          "value": false
+        }
+      ],
       "instances": [
         {
           "angle": 0,
@@ -214,8 +221,8 @@
           "name": "Modal",
           "persistentUuid": "55a821a0-ebaf-49b1-b5f1-436e7d58f658",
           "width": 0,
-          "x": 644,
-          "y": -309,
+          "x": 654,
+          "y": -720,
           "zOrder": 1,
           "numberProperties": [],
           "stringProperties": [],
@@ -230,8 +237,8 @@
           "name": "ModalCloseBtn",
           "persistentUuid": "dbea754a-97a0-4638-8625-592f34b42326",
           "width": 0,
-          "x": 1037,
-          "y": -471,
+          "x": 1047,
+          "y": -882,
           "zOrder": 2,
           "numberProperties": [],
           "stringProperties": [],
@@ -242,7 +249,7 @@
           "customSize": false,
           "height": 0,
           "keepRatio": true,
-          "layer": "",
+          "layer": "UI",
           "name": "item1",
           "persistentUuid": "28b5c66b-51a1-4020-9805-9450008247d8",
           "width": 0,
@@ -258,7 +265,7 @@
           "customSize": false,
           "height": 0,
           "keepRatio": true,
-          "layer": "",
+          "layer": "UI",
           "name": "item2",
           "persistentUuid": "67b960df-f281-4643-a7a7-e7c04529eced",
           "width": 0,
@@ -274,7 +281,7 @@
           "customSize": false,
           "height": 0,
           "keepRatio": true,
-          "layer": "",
+          "layer": "UI",
           "name": "item3",
           "persistentUuid": "19b8a533-9be1-4f56-a625-0d26531d72c9",
           "width": 0,
@@ -290,7 +297,7 @@
           "customSize": false,
           "height": 0,
           "keepRatio": true,
-          "layer": "",
+          "layer": "UI",
           "name": "item4",
           "persistentUuid": "0d4f5479-fff2-45c8-a22f-15462404529e",
           "width": 0,
@@ -306,7 +313,7 @@
           "customSize": false,
           "height": 0,
           "keepRatio": true,
-          "layer": "",
+          "layer": "UI",
           "name": "item5",
           "persistentUuid": "36772f0c-3eba-41fc-8382-fe2850e8b4d7",
           "width": 0,
@@ -322,7 +329,7 @@
           "customSize": false,
           "height": 0,
           "keepRatio": true,
-          "layer": "",
+          "layer": "UI",
           "name": "item6",
           "persistentUuid": "a53c5832-b67f-43db-a38f-7a8cb6d4e007",
           "width": 0,
@@ -338,13 +345,29 @@
           "customSize": false,
           "height": 0,
           "keepRatio": true,
-          "layer": "",
+          "layer": "UI",
           "name": "debug",
           "persistentUuid": "abd9bbb0-0b4b-4745-8280-000f69c46be6",
           "width": 0,
           "x": 526,
           "y": 78,
           "zOrder": 9,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "UI",
+          "name": "debug2",
+          "persistentUuid": "4ca70bc1-e961-49ca-8355-1f01ad92927e",
+          "width": 0,
+          "x": 43,
+          "y": 31,
+          "zOrder": 10,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -938,6 +961,47 @@
             "characterSize": 48,
             "color": "248;231;28"
           }
+        },
+        {
+          "assetStoreId": "",
+          "bold": true,
+          "italic": false,
+          "name": "debug2",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "ui_state : false",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 28,
+          "color": {
+            "b": 255,
+            "g": 255,
+            "r": 255
+          },
+          "content": {
+            "bold": true,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "ui_state : false",
+            "font": "",
+            "textAlignment": "left",
+            "characterSize": 28,
+            "color": "255;255;255"
+          }
         }
       ],
       "objectsFolderStructure": {
@@ -972,77 +1036,144 @@
           },
           {
             "objectName": "debug"
+          },
+          {
+            "objectName": "debug2"
           }
         ]
       },
       "events": [
         {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "at the begining no ui is open,, is_modal_open is false. (so items are clickable)"
+        },
+        {
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
               "type": {
-                "value": "SourisSurObjet"
+                "value": "BooleanVariable"
               },
               "parameters": [
-                "items",
-                "",
-                "",
+                "is_modal_open",
+                "=",
                 ""
               ]
-            },
-            {
-              "type": {
-                "value": "MouseButtonReleased"
-              },
-              "parameters": [
-                "",
-                "Left"
-              ]
-            },
-            {
-              "type": {
-                "value": "BuiltinCommonInstructions::Once"
-              },
-              "parameters": []
             }
           ],
-          "actions": [
+          "actions": [],
+          "events": [
             {
-              "type": {
-                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 226,
+                "g": 144,
+                "r": 74,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
               },
-              "parameters": [
-                "debug",
-                "Text",
-                "=",
-                "items.ObjectName()+\" Clicked\""
-              ]
+              "comment": "after open modal, set is_modal_open to false, so no item can clicked (none of this conditions happen under \"The variable is_modal_open is false\" action)"
             },
             {
-              "type": {
-                "value": "Create"
-              },
-              "parameters": [
-                "",
-                "Modal",
-                "SceneWindowWidth()/2",
-                "SceneWindowHeight()/2",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "Create"
-              },
-              "parameters": [
-                "",
-                "ModalCloseBtn",
-                "Modal.PointX(\"close\")",
-                "Modal.PointY(\"close\")",
-                ""
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "SourisSurObjet"
+                  },
+                  "parameters": [
+                    "items",
+                    "",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "MouseButtonReleased"
+                  },
+                  "parameters": [
+                    "",
+                    "Left"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "debug",
+                    "Text",
+                    "=",
+                    "items.ObjectName()+\" Clicked\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "Modal",
+                    "SceneWindowWidth()/2",
+                    "SceneWindowHeight()/2",
+                    "\"ModalUI\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "ModalCloseBtn",
+                    "Modal.PointX(\"close\")",
+                    "Modal.PointY(\"close\")",
+                    "\"ModalUI\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetBooleanVariable"
+                  },
+                  "parameters": [
+                    "is_modal_open",
+                    "True",
+                    ""
+                  ]
+                }
               ]
             }
           ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "change back to is_modal_open -> false (so again items are clickable)"
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
@@ -1091,6 +1222,27 @@
               "parameters": [
                 "ModalCloseBtn",
                 ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetBooleanVariable"
+              },
+              "parameters": [
+                "is_modal_open",
+                "False",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "debug",
+                "Text",
+                "=",
+                "\"modal closed\""
               ]
             }
           ]
@@ -1100,7 +1252,8 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "name": "positions",
+          "folded": true,
+          "name": "positions and others",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
           "events": [
@@ -1147,18 +1300,6 @@
                     "value": "MettreXY"
                   },
                   "parameters": [
-                    "item4",
-                    "=",
-                    "item5.X()+ 150",
-                    "=",
-                    "item5.Y()"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "MettreXY"
-                  },
-                  "parameters": [
                     "item3",
                     "=",
                     "item2.X()+ 150",
@@ -1183,11 +1324,40 @@
                     "value": "MettreXY"
                   },
                   "parameters": [
-                    "item6",
+                    "item4",
                     "=",
                     "item5.X()- 150",
                     "=",
                     "item5.Y()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "MettreXY"
+                  },
+                  "parameters": [
+                    "item6",
+                    "=",
+                    "item5.X()+ 150",
+                    "=",
+                    "item5.Y()"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "debug2",
+                    "Text",
+                    "=",
+                    "\"is_modal_open : \" + is_modal_open"
                   ]
                 }
               ]
@@ -1223,6 +1393,72 @@
               "width": 0
             }
           ],
+          "effects": [
+            {
+              "effectType": "Scene3D::HemisphereLight",
+              "name": "3D Light",
+              "doubleParameters": {
+                "elevation": 45,
+                "intensity": 1,
+                "rotation": 0
+              },
+              "stringParameters": {
+                "groundColor": "64;64;64",
+                "skyColor": "255;255;255",
+                "top": "Y-"
+              },
+              "booleanParameters": {}
+            }
+          ]
+        },
+        {
+          "ambientLightColorB": 200,
+          "ambientLightColorG": 200,
+          "ambientLightColorR": 200,
+          "camera3DFarPlaneDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearPlaneDistance": 3,
+          "cameraType": "",
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "UI",
+          "renderingType": "",
+          "visibility": true,
+          "cameras": [],
+          "effects": [
+            {
+              "effectType": "Scene3D::HemisphereLight",
+              "name": "3D Light",
+              "doubleParameters": {
+                "elevation": 45,
+                "intensity": 1,
+                "rotation": 0
+              },
+              "stringParameters": {
+                "groundColor": "64;64;64",
+                "skyColor": "255;255;255",
+                "top": "Y-"
+              },
+              "booleanParameters": {}
+            }
+          ]
+        },
+        {
+          "ambientLightColorB": 200,
+          "ambientLightColorG": 200,
+          "ambientLightColorR": 200,
+          "camera3DFarPlaneDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearPlaneDistance": 3,
+          "cameraType": "",
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "ModalUI",
+          "renderingType": "",
+          "visibility": true,
+          "cameras": [],
           "effects": [
             {
               "effectType": "Scene3D::HemisphereLight",
